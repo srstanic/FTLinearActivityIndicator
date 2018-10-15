@@ -50,9 +50,11 @@ class FTLinearActivityIndicatorViewController: UIViewController {
         bottomConstraint.isActive = true
         rightConstraint.isActive = true
         indicator.hidesWhenStopped = false
-        indicator.startAnimating()
         self.indicator = indicator
-
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        indicator?.startAnimating()
+    }
 }
